@@ -13,24 +13,24 @@
 <body style="margin: 0; overflow: hidden;">
   <div
     style="position: fixed; top: 0; width: 100%; text-align: center; background-color: rgba(0,0,0,0.5); color: white; padding: 5px; z-index: 1;">
-    <h1>Meu Projeto RA Geolocation v1.8</h1>
+    <h1>Meu Projeto RA Geolocation v1.9</h1>
   </div>
 
   <a-scene vr-mode-ui='enabled: false' embedded arjs='sourceType: webcam; debugUIEnabled: false;'
     arjs-location-source>
     <a-assets>
       <!-- <img id="pin" src="pinicon.png"> -->
-      <!-- 
-        SVG do pino. Você pode alterar a cor alterando o valor de 'fill'.
-        Por exemplo: fill="blue", fill="#FF0000", etc.
+      <!--
+        SVG que recria o 'pinicon.png' com fundo transparente real.
+        A cor pode ser alterada no atributo 'fill'.
       -->
-      <svg id="pin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-        <path fill="red" d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13C19 5.13 15.87 2 12 2z"/>
+      <svg id="pin" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+        <path fill="black" d="M256 0C149.9 0 64 85.9 64 192c0 70.1 38.2 130.7 96.2 169.4c-3.6 4.4-7.1 8.8-10.5 13.2C118.4 429.1 48 463.4 48 496c0 8.8 7.2 16 16 16h384c8.8 0 16-7.2 16-16c0-32.6-70.4-66.9-101.8-121.4c-3.4-4.4-6.9-8.8-10.5-13.2C413.8 322.7 452 262.1 452 192C452 85.9 366.1 0 256 0zm0 256a64 64 0 1 1 0-128 64 64 0 1 1 0 128z"/>
       </svg>
     </a-assets>
 
-    <a-image src="#pin" look-at="[gps-camera]" scale="20 20 20" transparent="true"
-      gps-entity-place="latitude: -20.759225; longitude: -42.881980;"></a-image>
+    <a-image src="#pin" look-at="[gps-camera]" scale="20 20 20"
+      material="transparent: true; alphaTest: 0.5;" gps-entity-place="latitude: -20.759225; longitude: -42.881980;"></a-image>
 
     <a-camera gps-camera rotation-reader> </a-camera>
   </a-scene>
